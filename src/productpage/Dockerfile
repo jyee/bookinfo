@@ -38,4 +38,4 @@ RUN chmod 775 /opt/microservices && \
 
 # hadolint ignore=DL3025
 CMD tail -f /opt/microservices/microservice.log & \
-    python productpage.py 9080
+    ddtrace-run python productpage.py 9080
