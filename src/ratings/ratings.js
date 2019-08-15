@@ -12,6 +12,9 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+// Start Datadog Tracer
+const tracer = require('dd-trace').init()
+
 var http = require('http')
 var dispatcher = require('httpdispatcher')
 
