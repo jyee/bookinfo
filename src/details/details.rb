@@ -17,6 +17,15 @@
 require 'webrick'
 require 'json'
 require 'net/http'
+require 'ddtrace'
+
+Datadog.configure do |c|
+  # Configure the tracer here.
+  # Activate integrations, change tracer settings, etc...
+  # By default without additional configuration, nothing will be traced.
+    c.use :http, {'analytics_enabled' => true, 'service_name' => 'details'}
+end
+
 
 if ARGV.length < 1 then
     puts "usage: #{$PROGRAM_NAME} port"

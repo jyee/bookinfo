@@ -12,7 +12,9 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-FROM ruby:2.6.3-slim
+FROM ruby:2.6.3
+
+RUN gem install ddtrace
 
 COPY details.rb /opt/microservices/
 
